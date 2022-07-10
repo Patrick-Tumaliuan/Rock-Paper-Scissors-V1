@@ -11,30 +11,69 @@
         let rpcValue;
         function computerPlay(){
             let number = Math.floor(Math.random() * 3);
-            
+
             switch(number){
                 case 0:
                     number = "0";
-                    return "Rock";
-                    rpcValue = "Rock";
+                    rpcValue = "rock";
                     break;
             
                 case 1:
                     number = "1";
-                    return "Paper"
-                    rpcValue = "Paper";
+                    
+                    rpcValue = "paper";
                     break;
 
                 case 2:
                     number = "2"
-                    return "Scissors"
-                    rpcValue = "Scissors";
+                    rpcValue = "scissors";
                     break;
-            }
-          
-                
+            }   
         }
-        console.log(computerPlay());
+        function playOne(){
+            let userSelection = prompt("Select Rock < Paper < Scissors");
+            userSelection = userSelection.toLowerCase();
+            computerPlay();
+           
+            if (userSelection == "rock"){
+                if(rpcValue == "rock"){
+                    console.log(`Draw! ${userSelection} draws with ${rpcValue}`);
+                }
+                else if(rpcValue == "paper"){
+                    console.log(`Lose! ${userSelection} losses to ${rpcValue}`);
+                }
+                else{
+                    console.log(`Win! ${userSelection} wins to ${rpcValue}`);
+                }
+
+            } else if(userSelection == "paper"){
+                if(rpcValue =="rock"){
+                    console.log(`Win! ${userSelection} wins to ${rpcValue}`);
+                }
+                else if(rpcValue == "paper"){
+                    console.log(`Draw! ${userSelection} draws with ${rpcValue}`);
+                }
+                else{
+                    console.log(`Lose! ${userSelection} losses to ${rpcValue}`);
+                }
+            } else if(userSelection =="scissors"){ //User Choose scissors
+                
+                if(rpcValue =="rock"){
+                    console.log(`Lose! ${userSelection} losses to ${rpcValue}`);
+                }
+                else if(rpcValue == "paper"){
+                    console.log(`Win! ${userSelection} wins to ${rpcValue}`);
+                }
+                else{
+                    console.log(`Draw! ${userSelection} draws with ${rpcValue}`);
+                }
+            }
+            }
+            
+        playOne();
+
+        
+        
     </script>
     
 </body>
